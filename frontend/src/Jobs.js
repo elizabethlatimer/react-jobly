@@ -60,7 +60,7 @@ function Jobs() {
             onChange={handleChange}
             value={form.search}
             name="search" />
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
+          <button className="btn btn-outline-primary my-2 my-sm-0" type="submit" >Search</button>
         </form>
         <div className="Jobs-List">
           {JobCards}</div>

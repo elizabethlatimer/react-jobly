@@ -1,0 +1,15 @@
+$btn-padding-y: .75rem;
+$btn-padding-x: 1rem;
+$btn-font-weight: bold;
+$btn-font-size: .85rem;
+$btn-border-radius: 0;
+$btn-border-radius-sm: 0;
+
+.btn {
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &:not(.btn-link) {
+    letter-spacing: 1.5px;
+  }
+}

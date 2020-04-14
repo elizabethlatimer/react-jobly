@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Alert from './Alert'
-import './Login.css'
+import './Login.scss'
 
 const INITIAL_FORM_STATE = {
   username: "",
@@ -56,28 +56,26 @@ function Login({ login, create }) {
   const { username, password, firstName, lastName, email } = form;
 
   const loginForm = (
-    <form className="Login-loginForm" onSubmit={handleLogin}>
-      <div className="Login form-group">
-        <label htmlFor="username">Username</label>
-        <br />
+    <form className="loginForm" onSubmit={handleLogin}>
+      <div className="form-group">
         <input id="username"
           className="form-control"
           name="username"
           type="text"
           required
           onChange={handleChange}
-          value={username} />
+          value={username}
+          placeholder="Username"/>
       </div>
-      <div className="Login form-group">
-        <label htmlFor="password">Password</label>
-        <br />
+      <div className="form-group">
         <input id="password"
           className="form-control"
           name="password"
           type="password"
           required
           onChange={handleChange}
-          value={password} />
+          value={password}
+          placeholder="Password" />
       </div>
       <button type="submit" className="btn btn-primary">Submit</button>
 
@@ -86,55 +84,55 @@ function Login({ login, create }) {
 
   const signUpForm = (
     <form className="Login-signUpForm" onSubmit={handleCreate}>
-      <div className="Login form-group">
-        <label htmlFor="username">Username</label>
+      <div className="form-group">
         <input id="username"
           className="form-control"
           name="username"
           type="text"
           required
           onChange={handleChange}
-          value={username} />
+          value={username}
+          placeholder="Username"/>
       </div>
-      <div className="Login form-group">
-        <label htmlFor="password">Password</label>
+      <div className="form-group">
         <input id="password"
           className="form-control"
           name="password"
           type="password"
           required
           onChange={handleChange}
-          value={password} />
+          value={password}
+          placeholder="Password"/>
       </div>
-      <div className="Login form-group">
-        <label htmlFor="firstName">First Name</label>
+      <div className="form-group">
         <input id="firstName"
           className="form-control"
           name="first_name"
           type="text"
           required
           onChange={handleChange}
-          value={firstName} />
+          value={firstName}
+          placeholder="First Name"/>
       </div>
-      <div className="Login form-group">
-        <label htmlFor="lastName">Last Name</label>
+      <div className="form-group">
         <input id="lastName"
           className="form-control"
           name="last_name"
           type="text"
           required
           onChange={handleChange}
-          value={lastName} />
+          value={lastName}
+          placeholder="Last Name"/>
       </div>
-      <div className="Login form-group">
-        <label htmlFor="email">Email</label>
+      <div className="form-group">
         <input id="email"
           className="form-control"
           name="email"
           type="email"
           required
           onChange={handleChange}
-          value={email} />
+          value={email}
+          placeholder="Email"/>
       </div>
       <button type="submit" className="btn btn-primary">Submit</button>
     </form>
@@ -143,15 +141,26 @@ function Login({ login, create }) {
   return (
     <div className="Login pt-5">
       <div className="Login-form col-md-6 col-lg-4 offset-md-3 offset-lg-4">
-        <div className="Login btn-group btn-group-toggle" data-toggle="buttons">
-          <label className={`Login btn btn-primary ${returning ? "active" : ""}`}>
-            <input type="radio" name="options" id="options1" autoComplete="off" onChange={() => toggleForm(true)} />Login
-          </label>
-          <label className={`Login btn btn-primary ${!returning ? "active" : ""}`}>
-            <input type="radio" name="options" id="options2" autoComplete="off" onChange={() => toggleForm(false)} />Signup
-          </label>
+        <div className="card">
+        <div className="text-right mt-3 mr-3">
+          <div className="btn-group btn-group-toggle" data-toggle="buttons">
+            <label className={`btn ${returning ? "btn-primary" : "btn-outline-primary"}`}>
+              <input type="radio"
+                     name="options"
+                     id="options1"
+                     autoComplete="off"
+                     onChange={() => toggleForm(true)} />
+                     Login
+            </label>
+            <label className={`btn ${!returning ? "btn-primary" : "btn-outline-primary"}`}>
+              <input type="radio"
+                     name="options"
+                     id="options2"
+                     autoComplete="off"
+                     onChange={() => toggleForm(false)} />Signup
+            </label>
+          </div>
         </div>
-        <div className="Login card">
           <div className="card-body">
             {alert ? alert : ""}
             {returning ? loginForm : signUpForm}
