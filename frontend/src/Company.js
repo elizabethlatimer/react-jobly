@@ -23,7 +23,7 @@ function Company() {
 
 
   return (
-    <div className="Company pt-5">
+    <div className="Company-jobs pt-5">
       <div className="col-md-8 offset-md-2">
 
         {company
