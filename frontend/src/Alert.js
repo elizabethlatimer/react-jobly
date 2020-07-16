@@ -7,7 +7,7 @@ function Alert({ type, messages }) {
         if (error.includes("password")) {
           error = "Password may only contain letters, numbers, spaces, and special characters !#%$&'()*+,./:;<=>?@^_`{|}~-"
         }
-        if (error.includes("username")) {
+        if (error.includes("instance.username")) {
           error = "Username may only contain letters, numbers, underscores(_) and dashes(-)"
         }
         return (
