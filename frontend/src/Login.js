@@ -37,7 +37,7 @@ function Login({ login, create }) {
       history.push("/jobs");
     } catch (err) {
       setAlert(<Alert messages={err} />)
-      setTimeout(() => setAlert(null), 4000)
+      setTimeout(() => setAlert(null), 5000)
     }
   }
 
@@ -47,6 +47,7 @@ function Login({ login, create }) {
       await create(form);
       history.push("/jobs");
     } catch (err) {
+      console.log(typeof err)
       setAlert(<Alert messages={err} />)
       setTimeout(() => setAlert(null), 6000)
     }

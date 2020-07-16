@@ -10,7 +10,7 @@
       "default": "",
       "minLength": 1,
       "maxLength": 55,
-      "pattern": "^[a-zA-Z 0-9!\"#$%&'()*+,./:;<=>?@[\]^_`{\|}~\\-]*$",
+      "pattern": "^[a-zA-Z0-9\\_\\-]*$",
       "examples": [
         "hueter"
       ]
@@ -22,7 +22,7 @@
       "default": "",
       "minLength": 5,
       "maxLength": 55,
-      "pattern": "^[a-zA-Z 0-9\\_\\-]*$",
+      "pattern": "^[a-zA-Z 0-9!#%$&'()*+,./:;<=>?@^\\_`{|}~\\-]*$",
       "examples": [
         "foo123"
       ]
